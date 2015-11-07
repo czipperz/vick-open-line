@@ -1,7 +1,7 @@
 CFLAGS=-std=c++11 -I../../src -I../../test -Isrc
 LDFLAGS=`find ../../out -type f -not \( -name main.o -o -name configuration.o \)` \
-        -lncurses ../../testout/test_main.o \
-        `find ../vick-insert-mode/out -type f`
+        -lncurses ../../testout/test_main.o
+LDLIBS=`find ../vick-insert-mode/out -type f`
 O=out
 S=src
 T=test
