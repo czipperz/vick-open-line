@@ -3,6 +3,9 @@
 
 #include "../../../src/contents.hh"
 
+namespace vick {
+namespace open_line {
+
 /*!
  * \file open_line.hh
  * \brief Describes the open_line_below() and open_line_above() functions to insert newlines.
@@ -19,5 +22,8 @@ open_line_below(contents&, boost::optional<int> = 1);
  */
 boost::optional<std::shared_ptr<change> >
 open_line_above(contents&, boost::optional<int> = 1);
+
+}
+}
 
 #endif

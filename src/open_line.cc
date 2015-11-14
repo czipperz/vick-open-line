@@ -2,6 +2,9 @@
 #include "../../../src/concat_c.hh"
 #include "../../vick-insert-mode/src/insert_mode.hh"
 
+namespace vick {
+namespace open_line {
+
 struct open_line_c : public change {
     const int num_lines;
     const move_t y;
@@ -55,7 +58,7 @@ open_line_below(contents& contents, boost::optional<int> num)
     std::shared_ptr<change> open_line =
         std::make_shared<open_line_c>(num ? num.get() : 1, contents.y);
     open_line->redo(contents);
-    auto insert = enter_insert_mode(contents);
+    auto insert = insert_mode::enter_insert_mode(contents);
     if (insert) {
         auto list = {open_line, insert.get()};
         return boost::optional<std::shared_ptr<change> >(
@@ -69,4 +72,7 @@ boost::optional<std::shared_ptr<change> >
 open_line_above(contents& contents, boost::optional<int> num)
 {
     return open_line_below(contents, num ? -num.get() : -1);
+}
+
+}
 }
