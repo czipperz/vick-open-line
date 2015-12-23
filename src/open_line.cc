@@ -10,7 +10,7 @@ struct open_line_c : public change {
     const move_t y;
     open_line_c(size_t num_lines, move_t y) : num_lines(num_lines), y(y)
     {
-        if(!num_lines) std::terminate();
+        if (not num_lines) std::terminate();
     }
     virtual bool is_overriding()
     {
@@ -54,7 +54,7 @@ struct open_line_c : public change {
 boost::optional<std::shared_ptr<change> >
 open_line_below(contents& contents, boost::optional<int> num)
 {
-    if (num && !num.get()) return boost::none;
+    if (num and num.get() == 0) return boost::none;
     std::shared_ptr<change> open_line =
         std::make_shared<open_line_c>(num ? num.get() : 1, contents.y);
     open_line->redo(contents);
