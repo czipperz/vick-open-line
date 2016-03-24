@@ -16,10 +16,6 @@ public:
         , y(y) {
         assert(num_lines != 0);
     }
-    virtual bool is_overriding()
-    {
-        return true;
-    }
     virtual bool is_overriding() { return true; }
     virtual void undo(contents& contents) {
         if (num_lines < 0) {
