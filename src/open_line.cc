@@ -1,6 +1,6 @@
-#include "../../../src/contents.hh"
-#include "../../../src/concat_c.hh"
-#include "../../vick-insert-mode/src/insert_mode.hh"
+#include "contents.hh"
+#include "concat_c.hh"
+#include "vick-insert-mode/src/insert_mode.hh"
 
 namespace vick {
 namespace open_line {

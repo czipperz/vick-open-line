@@ -1,7 +1,7 @@
 #ifndef HEADER_GUARD_OPEN_LINE_H
 #define HEADER_GUARD_OPEN_LINE_H
 
-#include "../../../src/contents.hh"
+#include "contents.hh"
 
 namespace vick {
 namespace open_line {
