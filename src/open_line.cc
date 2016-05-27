@@ -12,11 +12,11 @@ namespace open_line {
 
 struct open_line_c : public change {
 private:
-    const int num_lines;
+    const move_ts num_lines;
     const move_t y;
 
 public:
-    open_line_c(int num_lines, move_t y)
+    open_line_c(move_ts num_lines, move_t y)
         : num_lines(num_lines)
         , y(y) {
         assert(num_lines != 0);
