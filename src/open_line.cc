@@ -20,8 +20,8 @@ public:
         , y(y) {
         assert(num_lines != 0);
     }
-    virtual bool is_overriding() { return true; }
-    virtual void undo(contents& contents) {
+    virtual bool is_overriding() override { return true; }
+    virtual void undo(contents& contents) override {
         if (num_lines < 0) {
             contents.cont.erase(contents.cont.begin() + y,
                                 contents.cont.begin() + y -
@@ -36,7 +36,7 @@ public:
         contents.y = y;
         contents.x = 0;
     }
-    virtual void redo(contents& contents) {
+    virtual void redo(contents& contents) override {
         if (num_lines < 0) {
             for (int x = 0; x > num_lines; x--)
                 contents.cont.insert(contents.cont.begin() + y + x,
@@ -51,7 +51,7 @@ public:
         contents.x = 0;
     }
     virtual std::shared_ptr<change>
-    regenerate(const contents& contents) const {
+    regenerate(const contents& contents) const override {
         return std::make_shared<open_line_c>(num_lines, contents.y);
     }
 };
