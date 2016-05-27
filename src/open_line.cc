@@ -21,7 +21,7 @@ public:
         , y(y) {
         assert(num_lines != 0);
     }
-    virtual bool is_overriding() override { return true; }
+    virtual bool is_overriding() const noexcept override { return true; }
     virtual void undo(contents& contents) override {
         if (num_lines < 0) {
             contents.cont.erase(contents.cont.begin() + y,
