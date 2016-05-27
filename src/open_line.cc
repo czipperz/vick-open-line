@@ -2,8 +2,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-#include "contents.hh"
+#include "open_line.hh"
 #include "concat_c.hh"
+#include "contents.hh"
 #include "vick-insert-mode/src/insert_mode.hh"
 
 namespace vick {
