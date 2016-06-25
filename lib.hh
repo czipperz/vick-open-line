@@ -11,7 +11,7 @@ namespace vick {
 namespace open_line {
 
 /*!
- * \file open_line.hh
+ * \file vick-open-line/lib.hh
  * \brief Describes the open_line_below() and open_line_above()
  * functions to insert newlines.
  */
