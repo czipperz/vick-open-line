@@ -20,14 +20,14 @@ namespace open_line {
  * \brief Makes a given number of newlines after the current line and
  * enters insert mode
  */
-boost::optional<std::shared_ptr<change> >
+std::shared_ptr<change>
 open_line_below(contents&, boost::optional<int> = 1);
 
 /*!
  * \brief Makes a given number of newlines before the current line and
  * enters insert mode
  */
-boost::optional<std::shared_ptr<change> >
+std::shared_ptr<change>
 open_line_above(contents&, boost::optional<int> = 1);
 }
 }

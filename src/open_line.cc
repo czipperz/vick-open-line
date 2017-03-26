@@ -59,25 +59,25 @@ public:
     }
 };
 
-boost::optional<std::shared_ptr<change> >
+std::shared_ptr<change>
 open_line_below(contents& contents, boost::optional<int> num) {
     if (num and num.get() == 0)
-        return boost::none;
+        return nullptr;
     std::shared_ptr<change> open_line =
         std::make_shared<open_line_c>(num ? num.get() : 1,
                                       contents.y);
     open_line->redo(contents);
     auto insert = insert_mode::enter_insert_mode(contents);
     if (insert) {
-        auto list = {open_line, insert.get()};
-        return boost::optional<std::shared_ptr<change> >(
+        auto list = {open_line, insert};
+        return std::shared_ptr<change>(
             std::make_shared<concat_c>(list));
     } else {
         return open_line;
     }
 }
 
-boost::optional<std::shared_ptr<change> >
+std::shared_ptr<change>
 open_line_above(contents& contents, boost::optional<int> num) {
     return open_line_below(contents, num ? -num.get() : -1);
 }
